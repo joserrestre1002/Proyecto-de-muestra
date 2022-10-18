@@ -1,0 +1,413 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\PdfiumViewer.Native.x86.no_v8-no_xfa.2018.4.8.256\Build\PdfiumViewer.Native.x86.no_v8-no_xfa.props" Condition="Exists('..\packages\PdfiumViewer.Native.x86.no_v8-no_xfa.2018.4.8.256\Build\PdfiumViewer.Native.x86.no_v8-no_xfa.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9B76DBCC-8EDA-409A-A9DA-ACD0E25A828C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Control_panel_test</RootNamespace>
+    <AssemblyName>Control_panel_test</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.11.3.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.11.3\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Ivi.Visa, Version=5.6.0.0, Culture=neutral, PublicKeyToken=a128c98f1d7717c1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\IVI Foundation\VISA\Microsoft.NET\Framework32\v2.0.50727\VISA.NET Shared Components 5.6.0\Ivi.Visa.dll</HintPath>
+    </Reference>
+    <Reference Include="Keysight.Visa, Version=17.2.0.0, Culture=neutral, PublicKeyToken=7a01cdb2a9131f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files\Agilent\IO Libraries Suite\Keysight.Visa.dll</HintPath>
+    </Reference>
+    <Reference Include="Kvaser.CanLib, Version=1.6.360.0, Culture=neutral, PublicKeyToken=de45d0b2dbaf25b3, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Kvaser\Canlib\dotnet\win32\netstandard2.0\Kvaser.CanLib.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfiumViewer, Version=2.13.0.0, Culture=neutral, PublicKeyToken=91e4789cfb0609e0, processorArchitecture=MSIL">
+      <HintPath>..\packages\PdfiumViewer.2.13.0.0\lib\net20\PdfiumViewer.dll</HintPath>
+    </Reference>
+    <Reference Include="SpreadsheetLight, Version=3.5.0.0, Culture=neutral, PublicKeyToken=32fbb46dc1730c57, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpreadsheetLight.3.5.0\lib\netstandard2.0\SpreadsheetLight.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Common, Version=4.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.5.0.0\lib\net461\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Packaging.4.7.0\lib\net46\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="class_can_sequence.cs" />
+    <Compile Include="class_kvaser_usb.cs" />
+    <Compile Include="class_pdm_sequence.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="home_uc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="home_uc.Designer.cs">
+      <DependentUpon>home_uc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="class_keysight_instrument.cs" />
+    <Compile Include="option_test_uc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="option_test_uc.Designer.cs">
+      <DependentUpon>option_test_uc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="panel_test_uc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="panel_test_uc.Designer.cs">
+      <DependentUpon>panel_test_uc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="class_process_data.cs" />
+    <Compile Include="parameters_test_uc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="parameters_test_uc.Designer.cs">
+      <DependentUpon>parameters_test_uc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="register_uc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="register_uc.Designer.cs">
+      <DependentUpon>register_uc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="class_sequence_test.cs" />
+    <Compile Include="settings_uc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="settings_uc.Designer.cs">
+      <DependentUpon>settings_uc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="class_slide_show.cs" />
+    <Compile Include="slide_show_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="slide_show_form.Designer.cs">
+      <DependentUpon>slide_show_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="test_window.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="test_window.Designer.cs">
+      <DependentUpon>test_window.cs</DependentUpon>
+    </Compile>
+    <Compile Include="class_users.cs" />
+    <Compile Include="uc_keysight.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc_keysight.Designer.cs">
+      <DependentUpon>uc_keysight.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uc_pdfviewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc_pdfviewer.Designer.cs">
+      <DependentUpon>uc_pdfviewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uc_pdm_container.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc_pdm_container.Designer.cs">
+      <DependentUpon>uc_pdm_container.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uc_pdm_window.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc_pdm_window.Designer.cs">
+      <DependentUpon>uc_pdm_window.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_uc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_uc.Designer.cs">
+      <DependentUpon>User_uc.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="home_uc.resx">
+      <DependentUpon>home_uc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="option_test_uc.resx">
+      <DependentUpon>option_test_uc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="panel_test_uc.resx">
+      <DependentUpon>panel_test_uc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="parameters_test_uc.resx">
+      <DependentUpon>parameters_test_uc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="register_uc.resx">
+      <DependentUpon>register_uc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="settings_uc.resx">
+      <DependentUpon>settings_uc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="slide_show_form.resx">
+      <DependentUpon>slide_show_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="test_window.resx">
+      <DependentUpon>test_window.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc_keysight.resx">
+      <DependentUpon>uc_keysight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc_pdfviewer.resx">
+      <DependentUpon>uc_pdfviewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc_pdm_container.resx">
+      <DependentUpon>uc_pdm_container.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc_pdm_window.resx">
+      <DependentUpon>uc_pdm_window.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_uc.resx">
+      <DependentUpon>User_uc.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Window-2-icon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sss.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2560px-Stanley_Black_&amp;_Decker_Logo.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2560px-Stanley_Black_&amp;_Decker_Logo.svg1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo blanco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sss - Copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SBD-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sss1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo blanco - Copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo blanco - Copy1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sdfsdf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sss - Copy1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_home_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_console_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_pdf_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_microsoft_excel_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_settings_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_home_321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_console_321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_pdf_321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_pdf_322.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_microsoft_excel_321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_automatic_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_settings_321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_shutdown_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_close_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sdfsdf1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_test_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4036b8f7-f0bf-4c70-a894-d367d84ba200.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_close_321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_contacts_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Enlarge_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_subtract_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_maximize_button_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_contacts_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_cancel_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_show_password_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_file_invoice_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_translation_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4036b8f7-f0bf-4c70-a894-d367d84ba2001.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconsflecha_back_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconsflecha_back_32 - Copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_multiply_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconsflecha_back_32 - Copy %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>6</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\PdfiumViewer.Native.x86.no_v8-no_xfa.2018.4.8.256\Build\PdfiumViewer.Native.x86.no_v8-no_xfa.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\PdfiumViewer.Native.x86.no_v8-no_xfa.2018.4.8.256\Build\PdfiumViewer.Native.x86.no_v8-no_xfa.props'))" />
+  </Target>
+</Project>
